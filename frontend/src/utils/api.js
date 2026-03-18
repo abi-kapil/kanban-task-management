@@ -5,7 +5,7 @@ import axios from "axios";
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || "/api", // all requests atomatically start with /api
   headers: {
-    "Content-type": "applications/json", //tells the server we are sending JSON
+    "Content-type": "application/json", //tells the server we are sending JSON
   },
 });
 
