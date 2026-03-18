@@ -43,7 +43,7 @@ body.dark .label {
   font-size: 13px;
   font-weight: 500;
   color: var(--black);
-  background: transparent;
+  background: var(--white);
   outline: none;
   transition: border-color 0.2s;
   width: 100%;
@@ -52,6 +52,7 @@ body.dark .label {
 body.dark .input {
   border-color: var(--lines-dark);
   color: var(--white);
+  background: var(--dark-grey);
 }
 
 .input:focus {
@@ -70,7 +71,7 @@ body.dark .input {
   font-size: 13px;
   font-weight: 500;
   color: var(--black);
-  background: transparent;
+  background: var(--white);
   outline: none;
   transition: border-color 0.2s;
   width: 100%;
@@ -82,6 +83,7 @@ body.dark .input {
 body.dark .textarea {
   border-color: var(--lines-dark);
   color: var(--white);
+  background: var(--dark-grey);
 }
 
 .textarea:focus {
