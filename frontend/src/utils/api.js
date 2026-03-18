@@ -3,7 +3,7 @@ import axios from "axios";
 // Create a pre-configured axios instance
 // Every api call in the app uses this instead of plain axios
 const api = axios.create({
-  baseURL: "/api", // all requests atomatically start with /api
+  baseURL: import.meta.env.VITE_API_URL || "/api", // all requests atomatically start with /api
   headers: {
     "Content-type": "applications/json", //tells the server we are sending JSON
   },
