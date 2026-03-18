@@ -30,16 +30,14 @@ export async function register(req, res) {
       email,
     ]);
     if (existing.rows.length > 0) {
-      // BUG: res.json(409) should be res.status(409).json(...)
-      return res.json(409).json({ error: "Email already registered" });
+      return res.status(409).json({ error: "Email already registered" });
     }
 
     // Hash the password before inserting (cost factor 10 is a good default)
     const passwordHash = await bcrypt.hash(password, 10);
 
-    // BUG: SQL uses RETURN instead of RETURNING — this query will fail
     const result = await query(
-      "INSERT INTO users (name, email, password_hash) VALUES ($1, $2, $3) RETURN id, name, email",
+      "INSERT INTO users (name, email, password_hash) VALUES ($1, $2, $3) RETURNING id, name, email",
       [name, email, passwordHash],
     );
 
@@ -98,8 +96,7 @@ export async function login(req, res) {
       { expiresIn: "7d" },
     );
 
-    // BUG: res.join should be res.json
-    res.join({
+    res.json({
       token,
       user: { id: user.id, name: user.name, email: user.email },
     });
