@@ -1,0 +1,68 @@
+/* Reset - removes default browser styling that differs between browsers */
+*, *::before, *::after {
+  box-sizing: border-box; /* makes sizing predictable - padding doesn't add to width */
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS Variables - your design system in one place */
+/* Access these anywhere with var(--variable-name) */
+:root {
+  /* Colors - exact values from the Figma design */
+  --main-purple: #635FC7;      /* primary brand color */
+  --main-purple-hover: #A8A4FF;/* lighter purple for hover states */
+  --black: #000112;            /* not pure black, slightly blue-tinted */
+  --very-dark-grey: #20212C;   /* dark mode background */
+  --dark-grey: #2B2C37;        /* dark mode card/sidebar color */
+  --lines-dark: #3E3F4E;       /* dark mode borders */
+  --medium-grey: #828FA3;      /* secondary text color */
+  --lines-light: #E4EBFA;      /* light mode borders */
+  --light-grey: #F4F7FD;       /* light mode background */
+  --white: #FFFFFF;
+  --red: #EA5555;              /* destructive actions (delete) */
+  --red-hover: #FF9898;        /* lighter red for hover */
+
+  /* Sidebar width - change in one place, updates everywhere */
+  --sidebar-width: 300px;
+}
+
+/* Base body styles */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--light-grey); /* light mode default */
+  color: var(--black);
+  transition: background-color 0.2s ease, color 0.2s ease; /* smooth theme switching */
+}
+
+/* Dark mode - applied by adding 'dark' class to body element */
+body.dark {
+  background-color: var(--very-dark-grey);
+  color: var(--white);
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--lines-light);
+  border-radius: 4px;
+}
+body.dark ::-webkit-scrollbar-thumb {
+  background: var(--lines-dark); /* darker scrollbar in dark mode */
+}
+
+/* Remove default button and input styles */
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit; /* buttons inherit the body font */
+}
+
+input, textarea, select {
+  font-family: inherit;
+}

@@ -1,0 +1,36 @@
+.overlay {
+  position: fixed;       /* covers the whole screen */
+  inset: 0;              /* shorthand for top/right/bottom/left all = 0 */
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent dark backdrop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;          /* sits on top of everything */
+  padding: 24px;
+  animation: fadeIn 0.15s ease; /* smooth fade in */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 32px;
+  width: 100%;
+  max-width: 480px;
+  max-height: calc(100vh - 48px); /* never taller than the screen */
+  overflow-y: auto;               /* scroll if content is too tall */
+  animation: slideIn 0.2s ease;  /* smooth slide in */
+}
+
+body.dark .modal {
+  background: var(--dark-grey);
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

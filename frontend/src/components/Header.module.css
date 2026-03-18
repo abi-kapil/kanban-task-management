@@ -1,0 +1,137 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 0 24px;
+  height: 97px;
+  min-height: 97px;
+  background: var(--white);
+  border-bottom: 1px solid var(--lines-light);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+body.dark .header {
+  background: var(--dark-grey);
+  border-color: var(--lines-dark);
+}
+
+.mobileLogo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 8px;
+}
+
+.mobileLogo span {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--black);
+}
+
+body.dark .mobileLogo span {
+  color: var(--white);
+}
+
+.boardName {
+  flex: 1;                  /* takes up all available space */
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  white-space: nowrap;      /* prevents text wrapping */
+  overflow: hidden;         /* hides overflow text */
+  text-overflow: ellipsis;  /* shows ... when text is too long */
+}
+
+body.dark .boardName {
+  color: var(--white);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0; /* never shrinks - always visible */
+}
+
+.addBtn {
+  background: var(--main-purple);
+  color: var(--white);
+  border-radius: 24px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background 0.2s, opacity 0.2s;
+  white-space: nowrap;
+}
+
+.addBtn:hover:not(.disabled) {
+  background: var(--main-purple-hover);
+}
+
+.addBtn.disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.menuWrap {
+  position: relative;
+}
+
+.ellipsis {
+  background: none;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 19;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 16px);
+  background: var(--white);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 10px 20px rgba(54, 78, 126, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 192px;
+  z-index: 20;
+}
+
+body.dark .menu {
+  background: var(--very-dark-grey);
+}
+
+.menu button {
+  background: none;
+  text-align: left;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--medium-grey);
+  transition: background 0.15s;
+}
+
+.menu button:hover {
+  background: var(--light-grey);
+}
+
+body.dark .menu button:hover {
+  background: var(--dark-grey);
+}
+
+.menu button.danger {
+  color: var(--red);
+}

@@ -1,0 +1,154 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.title {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.4;
+}
+
+body.dark .title {
+  color: var(--white);
+}
+
+.menuWrap {
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.ellipsis {
+  background: none;
+  padding: 4px;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: var(--white);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 10px 20px rgba(54, 78, 126, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 192px;
+  z-index: 2;
+}
+
+body.dark .menu {
+  background: var(--very-dark-grey);
+}
+
+.menu button {
+  background: none;
+  text-align: left;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--medium-grey);
+  transition: background 0.15s;
+}
+
+.menu button:hover {
+  background: var(--light-grey);
+}
+
+body.dark .menu button:hover {
+  background: var(--dark-grey);
+}
+
+.menu button.danger {
+  color: var(--red);
+}
+
+.description {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--medium-grey);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.subtasksSection {
+  margin-bottom: 24px;
+}
+
+.sectionLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--medium-grey);
+  margin-bottom: 16px;
+}
+
+body.dark .sectionLabel {
+  color: var(--white);
+}
+
+.subtaskList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subtask {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--light-grey);
+  border-radius: 4px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+body.dark .subtask {
+  background: var(--very-dark-grey);
+}
+
+.subtask:hover {
+  background: rgba(99, 95, 199, 0.25);
+}
+
+.subtask input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--main-purple); /* colors the checkbox purple */
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.subtask span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--black);
+  transition: color 0.15s, opacity 0.15s;
+}
+
+body.dark .subtask span {
+  color: var(--white);
+}
+
+/* Completed subtask gets strikethrough and fades out */
+.subtask span.completed {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.statusSection {
+  margin-top: 4px;
+}

@@ -1,0 +1,48 @@
+.card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 24px 16px;
+  box-shadow: 0 4px 6px rgba(54, 78, 126, 0.1);
+  cursor: grab;         /* shows grab cursor on hover */
+  transition: transform 0.15s;
+  user-select: none;    /* prevents text selection while dragging */
+}
+
+body.dark .card {
+  background: var(--dark-grey);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Title turns purple when hovering over card */
+.card:hover .title {
+  color: var(--main-purple);
+}
+
+.card:active {
+  cursor: grabbing;   /* shows grabbing cursor while dragging */
+}
+
+/* Style for the DragOverlay floating card */
+.dragging {
+  box-shadow: 0 20px 40px rgba(54, 78, 126, 0.25) !important;
+  transform: rotate(2deg); /* slight rotation while dragging feels natural */
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 8px;
+  line-height: 1.4;
+  transition: color 0.15s;
+}
+
+body.dark .title {
+  color: var(--white);
+}
+
+.subtasks {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--medium-grey);
+}

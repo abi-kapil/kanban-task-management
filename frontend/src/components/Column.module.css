@@ -1,0 +1,43 @@
+.column {
+  flex-shrink: 0;   /* never shrinks - always stays 280px wide */
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 4px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.header h3 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.4px; /* spaced out uppercase letters */
+  color: var(--medium-grey);
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 20px;   /* always has some height even when empty */
+  border-radius: 8px;
+  transition: background 0.15s;
+  padding: 4px;
+}
+
+/* Visual feedback when dragging a task over this column */
+.taskList.over {
+  background: rgba(99, 95, 199, 0.1);
+}

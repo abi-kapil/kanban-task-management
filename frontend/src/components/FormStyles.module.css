@@ -1,0 +1,227 @@
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 24px;
+}
+
+body.dark .title {
+  color: var(--white);
+}
+
+.title.danger {
+  color: var(--red);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.fieldRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--medium-grey);
+}
+
+body.dark .label {
+  color: var(--white);
+}
+
+.input {
+  padding: 8px 16px;
+  border: 1px solid var(--lines-light);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--black);
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+body.dark .input {
+  border-color: var(--lines-dark);
+  color: var(--white);
+}
+
+.input:focus {
+  border-color: var(--main-purple);
+}
+
+.input::placeholder {
+  color: var(--medium-grey);
+  opacity: 0.5;
+}
+
+.textarea {
+  padding: 8px 16px;
+  border: 1px solid var(--lines-light);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--black);
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  resize: vertical;
+  min-height: 112px;
+  line-height: 1.7;
+}
+
+body.dark .textarea {
+  border-color: var(--lines-dark);
+  color: var(--white);
+}
+
+.textarea:focus {
+  border-color: var(--main-purple);
+}
+
+.textarea::placeholder {
+  color: var(--medium-grey);
+  opacity: 0.5;
+}
+
+.select {
+  padding: 8px 16px;
+  border: 1px solid var(--lines-light);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--black);
+  background: var(--white);
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23635FC7' strokeWidth='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 36px;
+}
+
+body.dark .select {
+  border-color: var(--lines-dark);
+  color: var(--white);
+  background-color: var(--dark-grey);
+}
+
+.select:focus {
+  border-color: var(--main-purple);
+}
+
+.removeBtn {
+  background: none;
+  color: var(--medium-grey);
+  font-size: 20px;
+  line-height: 1;
+  padding: 4px;
+  flex-shrink: 0;
+  transition: color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.removeBtn:hover {
+  color: var(--red);
+}
+
+.addBtn {
+  width: 100%;
+  padding: 10px;
+  background: rgba(99, 95, 199, 0.1);
+  color: var(--main-purple);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s;
+  margin-bottom: 8px;
+}
+
+body.dark .addBtn {
+  background: var(--white);
+}
+
+.addBtn:hover {
+  background: rgba(99, 95, 199, 0.25);
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 10px;
+  background: var(--main-purple);
+  color: var(--white);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    background 0.2s,
+    opacity 0.2s;
+  margin-bottom: 8px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--main-purple-hover);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submitBtn.danger {
+  background: var(--red);
+}
+
+.submitBtn.danger:hover {
+  background: var(--red-hover);
+}
+
+.cancelBtn {
+  width: 100%;
+  padding: 10px;
+  background: rgba(99, 95, 199, 0.1);
+  color: var(--main-purple);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+
+body.dark .cancelBtn {
+  background: var(--white);
+}
+
+.cancelBtn:hover {
+  background: rgba(99, 95, 199, 0.25);
+}
+
+.errorMsg {
+  font-size: 13px;
+  color: var(--red);
+  padding: 10px;
+  background: rgba(234, 85, 85, 0.1);
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.colorDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
