@@ -17,8 +17,8 @@ const PORT = process.env.PORT || 5000;
 // CORS: only allow requests from our React dev server (or the deployed frontend URL)
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5173", // Allow requests from our React app
-    credentials: true, // needed if we ever send cookies / auth headers
+    origin: true,
+    credentials: true,
   }),
 );
 
